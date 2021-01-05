@@ -1,0 +1,26 @@
+<h2 class="container m-2"> Nuevo Artículo</h2>
+
+<form id="create_posts" method="post" action="/posts/create">
+
+    <%= form_with scope: :post, url: posts_path, local: true do |f| %>
+        <p>
+            <%= f.label "Título"%> <br>
+            <%= f.text_field :title %>
+        </p>
+
+        <p>
+            <%= f.label "URL de la imagen"%><br>
+            <%= f.text_field :image_url%>
+        </p>
+
+        <p>
+            <%= f.label "Contenido"%> <br>
+            <%= f.text_area :content%>
+        </p>
+
+        <p>
+            <%= f.submit "Guardar" %>
+        </p>
+
+    <%end%>
+</form>
